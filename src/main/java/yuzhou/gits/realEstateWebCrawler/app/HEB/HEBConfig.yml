@@ -1,0 +1,18 @@
+baseUrl: http://spfmmbj.hrbszfc.com:5399/mmbjquery/jsp/queryPresale.action?toptype=WSFDC
+httpConnectTimeout: 100000
+httpReadTimeout:  100000
+httpWriteTimeout:  100000
+httpMethod:  GET
+#httpHeader:
+#httpPostParams:
+#httpBody:
+basePagingTaskNum: 1
+basePageStart: 1
+basePageEnd: -1 #less than 0 means end is tatal pages
+basePageUrl: "http://spfmmbj.hrbszfc.com:5399/mmbjquery/queryPresale.action?developer=&projectname=&district=99&prosit=&toptype=WSFDC&bustype=&pager.offset=[OFFSET]&pageNo=[PAGENO]"
+basePageInfoType: HTML_ELE_EXTRAT
+basePageInfoPatternStr: 共(\\d+)页
+basePageInfoSelector: body > div.BRCentent2 > div.BRC2Tab > table > tbody > tr:last-child > td > div > a:nth-child(5) > nobr
+
+roomCollectionBaseName: heb_room20180703
+roomBatchSize: 100

@@ -1,0 +1,15 @@
+baseUrl: http://ksfc.kscein.gov.cn/lp/search_loupan.aspx
+httpConnectTimeout: 600000
+httpReadTimeout:  600000
+httpWriteTimeout:  600000
+httpMethod:  GET
+#httpHeader:
+#httpPostParams:
+#httpBody:
+basePagingTaskNum: 1
+basePageStart: 1
+basePageEnd: -1 #less than 0 means end is tatal pages
+basePageUrl: http://ksfc.kscein.gov.cn/lp/search_loupan.aspx
+basePageInfoType: HTML_ELE_EXTRAT
+basePageInfoPatternStr: 共(\\d+)页
+basePageInfoSelector: body > div.BRCentent2 > div.BRC2Tab > table > tbody > tr:last-child > td > div > a:nth-child(5) > nobr

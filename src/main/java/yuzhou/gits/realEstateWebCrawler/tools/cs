@@ -1,0 +1,17 @@
+2>
+常熟采集表.xlsx
+3>
+项目列表|cs_project
+4>
+projName,projLocation,developer,salePhone,saleAddr,adminDivision,greenRate,rjl,totalArea,totalConstructArea,landGetWay,carSpots,carSpotsRate,propertyCompany,date
+1>
+3>
+预售证|cs_presalelicense
+4>
+developer,projLocation,preSaleLicense,licenseArea,monitorBankName,projName,preSaleBuildNames,planningUsage,issueDate,monitorBankNo,date
+1>
+3>
+房号表|cs_room
+4>
+projName,buildName,adminDivision,projLocation,property,carryoutNo,gaNo,totalUnits,totalBuildArea,roomColor,roomNo,roomType,floorNo,unitNo,saleState,constructArea,roomUsage,roomProperty,date
+1>

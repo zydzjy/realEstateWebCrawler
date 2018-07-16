@@ -1,0 +1,15 @@
+baseUrl: "http://old.newhouse.cnnbfdc.com/Lpxx.aspx?Region=&ProjectName="
+httpConnectTimeout: 100000
+httpReadTimeout:  100000
+httpWriteTimeout:  100000
+httpMethod:  GET
+#httpHeader:
+#httpPostParams:
+#httpBody: "<PDoc Tag='GetYSPrjInfo' />"
+basePagingTaskNum: 1
+basePageStart: 1
+basePageEnd: -1 #less than 0 means end is tatal pages
+basePageUrl: "http://old.newhouse.cnnbfdc.com/Lpxx.aspx?Region=&ProjectName=&p="
+basePageInfoType: HTML_ELE_EXTRAT
+basePageInfoPatternStr: (\\d+)页
+basePageInfoSelector: "#AspNetPager1 > table > tbody > tr > td:nth-child(1)"

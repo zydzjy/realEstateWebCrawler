@@ -1,0 +1,12 @@
+2>
+太仓采集表.xlsx
+3>
+楼栋表|tc_building
+4>
+projName,projLocation,buildName,construction,floors,units,rooms,date
+1>
+3>
+房号表|tc_room
+4>
+projName,buildName,roomNo,roomColor,unitNo,floorNo,constructionArea,innerArea,shareArea,floorHeight,roomUsage,roomStruct,balcony,roomType,planningPrice,openDate,date
+1>

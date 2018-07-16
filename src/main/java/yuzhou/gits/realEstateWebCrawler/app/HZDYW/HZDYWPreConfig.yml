@@ -1,0 +1,15 @@
+baseUrl: http://61.142.120.214:9000/web/salepermit.jsp
+httpConnectTimeout: 100000
+httpReadTimeout:  100000
+httpWriteTimeout:  100000
+httpMethod:  GET
+#httpHeader:
+#httpPostParams:
+#httpBody:
+basePagingTaskNum: 1
+basePageStart: 1
+basePageEnd: -1 #less than 0 means end is tatal pages
+basePageUrl: "http://61.142.120.214:9000/web/salepermit.jsp"
+basePageInfoType: HTML_ELE_EXTRAT
+basePageInfoPatternStr: 共(\\d+)页
+basePageInfoSelector: "#Searchresults > table > tbody > tr:last-child > td"

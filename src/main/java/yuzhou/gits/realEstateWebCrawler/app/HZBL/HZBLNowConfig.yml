@@ -1,0 +1,16 @@
+baseUrl: http://119.146.67.130:8083/web/nowonsale.jsp
+httpConnectTimeout: 100000
+httpReadTimeout:  100000
+httpWriteTimeout:  100000
+httpMethod:  GET
+#httpHeader:
+#httpPostParams:
+#httpBody:
+basePagingTaskNum: 1
+basePageStart: 1
+basePageEnd: -1 #less than 0 means end is tatal pages
+basePageUrl: "http://202.104.194.190:88/web/presale.jsp"
+basePageInfoType: HTML_ELE_EXTRAT
+basePageInfoPatternStr: 共(\\d+)页
+basePageInfoSelector: "#Searchresults > table > tbody > tr:last-child > td"
+projectType: NOW

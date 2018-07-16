@@ -1,0 +1,17 @@
+2>
+珠海采集表.xlsx
+3>
+项目列表|zh_project
+4>
+presaleLicenseNo,projName,developer,mortage	,constructionArea,houseArea,bizArea,issueDate	,date
+1>
+3>
+预售证|zh_presalelicense
+4>
+projName,presaleLicenseNo,developer,projLocation,remark,buildInfo,houseArea,houseCnts,bizArea,bizCnts,officeArea,officeCnts,otherArea,otherCnts,bankNum,date
+1> 
+3>
+房号表|zh_room
+4>
+presaleLicenseNo,projName,buildNo,origiBuildNo,roomNo,roomColor,unitNo,floorNo,origiRoomNo,roomType,constructionArea,innerArea,roomUsage,propertyFee,date
+1>
