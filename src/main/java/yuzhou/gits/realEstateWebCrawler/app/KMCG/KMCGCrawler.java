@@ -17,6 +17,7 @@ public class KMCGCrawler extends DefaultRealEstateCrawlerStub {
 	 
 	public KMCGCrawler(){
 		this.callbacksInPage = new ProjectListExtractCallback();
+		this.callbackInFirstPage = new ProjectListExtractCallback();
 	}
 
 	@Override
