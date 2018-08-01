@@ -1,4 +1,4 @@
-package yuzhou.gits.realEstateWebCrawler.app;
+/*package yuzhou.gits.realEstateWebCrawler.app;
 
 import java.sql.PreparedStatement;
 import java.util.Iterator;
@@ -42,3 +42,4 @@ public class PropsMapInToDBCallback extends InToDBCallback {
 		}
 	}
 }
+*/

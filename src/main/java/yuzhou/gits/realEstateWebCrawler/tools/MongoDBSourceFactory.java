@@ -7,7 +7,12 @@ public class MongoDBSourceFactory implements DataSourceFactory {
 	public void prepareSource(Object... args) throws Exception {
 		String dbName = (String) args[0];
 		String collectionName =(String)args[1];
-		this.dbSource.findCollection(dbName, collectionName);
+		if(args.length>2){
+			String filterStr = (String)args[2];
+			this.dbSource.findCollection(dbName, collectionName,filterStr);
+		}else{
+			this.dbSource.findCollection(dbName, collectionName);
+		}
 	}
 
 	@Override

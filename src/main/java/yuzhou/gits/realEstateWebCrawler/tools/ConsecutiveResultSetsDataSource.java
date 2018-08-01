@@ -11,7 +11,7 @@ public class ConsecutiveResultSetsDataSource implements DataSource {
 	ResultSet currRs = null;
 	PreparedStatement currPs = null;
 	Connection dbConn = null;
-	public ConsecutiveResultSetsDataSource(Connection conn,String[] qrySelects) throws Exception{
+	public ConsecutiveResultSetsDataSource(Connection conn,String...qrySelects) throws Exception{
 		this.qrySelects = qrySelects;
 		this.dbConn = conn;
 		currPs = dbConn.prepareStatement("select * from "+
@@ -45,8 +45,17 @@ public class ConsecutiveResultSetsDataSource implements DataSource {
 	}
 	@Override
 	public Object[] getObjVal(String... objNames) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		String[] vals = new String[objNames.length];
+		for(int i=0;i<objNames.length;i++){
+			Object _val = this.currRs.getString(objNames[i]);
+			if(_val == null){
+				vals[i] = null;
+			}
+			else{
+				vals[i] = _val.toString();
+			}
+		}
+		return vals;
 	}
 	@Override
 	public void init(Object... args) throws Exception {

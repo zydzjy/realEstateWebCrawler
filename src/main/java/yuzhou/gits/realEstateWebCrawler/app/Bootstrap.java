@@ -14,9 +14,7 @@ import yuzhou.gits.crawler.crawl.CrawlerStub;
 import yuzhou.gits.realEstateWebCrawler.app.annotaion.CrawlerAnnotation;
 
 public class Bootstrap {
-
 	public static void main(String[] args) {
- 
 		Bootstrap bootstrap = new Bootstrap();
 		bootstrap.populateEvnProperties(args);
 		bootstrap.startup();

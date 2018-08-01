@@ -16,9 +16,9 @@ public abstract class DefaultRealEstateCrawlerStub extends DefaultCrawlerStub {
 	protected WebResourceCrawlingCallback callbacksInPage = null;
 	public static final String MONGODB_CALLBACK = "MONGODB_CALLBACK";
 	protected IntoMongoDBCallback mongodbCallback = SingletonMongoDBCallback.singleton;
-	protected abstract PagingCallback createPagingCallback() throws Exception;
-	protected String datasetSuffix = "";
 	
+	protected String datasetSuffix = "";
+	protected abstract PagingCallback createPagingCallback() throws Exception;
 	public String getDatasetSuffix() {
 		return datasetSuffix;
 	}
@@ -31,12 +31,14 @@ public abstract class DefaultRealEstateCrawlerStub extends DefaultCrawlerStub {
 
 		super.init(crawlerConfigPath, cfgClzName, env);
 		try {
-			this.datasetSuffix = (String) env.get(Bootstrap.ENV_DATASET_SUFFIX);
-			this.callbacksInPage.init(this.datasetSuffix);
+			/*this.datasetSuffix = (String) env.get(Bootstrap.ENV_DATASET_SUFFIX);
+			if(this.callbacksInPage != null)
+				this.callbacksInPage.init(this.datasetSuffix);*/
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
 	@Override
 	public WebCrawlingTask createBaseCrawlTask(Object arg) throws Exception {
 		WebCrawlingTask baseTask = super.createBaseCrawlTask(arg);
@@ -44,6 +46,8 @@ public abstract class DefaultRealEstateCrawlerStub extends DefaultCrawlerStub {
 		return baseTask;
 	}
 	
+	protected WebResourceCrawlingCallback callbackInFirstPage = null;
+	protected void createFirstPageCallback(){}
 	@Override
 	protected WebResourceCrawlingCallback[] createBaseCrawlingCallbacks(Object arg) throws Exception {
 		WebCrawlingTask baseTask = (DefaultCrawlingTask) arg;
@@ -61,8 +65,9 @@ public abstract class DefaultRealEstateCrawlerStub extends DefaultCrawlerStub {
 			
 			WebResourceCrawlingCallback[] callbacks = null;
 			if(startPageNo == 1){
+				this.createFirstPageCallback();
 				callbacks = new WebResourceCrawlingCallback[2];
-				callbacks[0] = this.callbacksInPage;
+				callbacks[0] = this.callbackInFirstPage;
 				callbacks[1] = (WebResourceCrawlingCallback) pagingCallback;
 
 				baseTask.getPathContext().setAttr(Constants.PAGE_START_NO, startPageNo +1 );

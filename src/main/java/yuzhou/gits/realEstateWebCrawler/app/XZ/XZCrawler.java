@@ -16,6 +16,7 @@ public class XZCrawler extends DefaultRealEstateCrawlerStub {
 
 	public XZCrawler(){
 		this.callbacksInPage = new ProjectListExtractCallback();
+		this.callbackInFirstPage = new ProjectListExtractCallback();
 	}
 	
 	@Override

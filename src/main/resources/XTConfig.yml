@@ -1,0 +1,15 @@
+baseUrl: http://floor.0731fdc.com/search.php?ssqy=1&ssbkid=a&subway=a&zxzt=&price=&q=
+httpConnectTimeout: 100000
+httpReadTimeout:  100000
+httpWriteTimeout:  100000
+httpMethod:  GET
+#httpHeader:
+#httpPostParams:
+#httpBody:
+basePagingTaskNum: 1
+basePageStart: 1
+basePageEnd: -1 #less than 0 means end is tatal pages
+basePageUrl: "http://floor.0731fdc.com/search.php?page=[PAGENO]&q=&xmdd=&wylx=&ssbkid=a&price=&tjw=&ssqy=1&kfgs=&zxzt=&hmts=&subway=a&zt=&tj=&tg=&dsf=&xhx=&dz=&bs=&code=&floorid=&xy_type=&qu_type=&leitype=&sort="
+basePageInfoType: HTML_ELE_EXTRAT
+basePageInfoPatternStr: (\\d+)页
+basePageInfoSelector: "#AspNetPager1 > table > tbody > tr > td:nth-child(1)"

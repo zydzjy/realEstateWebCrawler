@@ -84,7 +84,7 @@ public class ExcelToMongoDBTool {
 					"E:\\crawlerData\\data\\hzdyw", "E:\\crawlerData\\data\\hzhd", "E:\\crawlerData\\data\\tc" };
 			*/
 			String[] cfgs = {"E:\\tempWorkspace\\codes\\realEstateWebCrawler\\src\\main\\java"
-					+ "\\yuzhou\\gits\\realEstateWebCrawler\\tools\\zh"};
+					+ "\\yuzhou\\gits\\realEstateWebCrawler\\tools\\kmcg"};
 			new ExcelToMongoDBTool().loadCfg(cfgs);
 		} catch (Exception e1) {
 			e1.printStackTrace();

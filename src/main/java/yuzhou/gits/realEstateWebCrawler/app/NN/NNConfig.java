@@ -52,4 +52,12 @@ public class NNConfig extends BaseCfg {
 		roomDetailRegExprs.put("constructArea", Pattern.compile("建筑面积：([^<br />\r\n]*)"));
 		roomDetailRegExprs.put("planningSalePrice", Pattern.compile("拟售单价：([^\r\n]*)"));
 	}
+	
+	/*
+	background-color:#F00 --已备案
+	background-color:#c00 --已签约
+	background-color:#0000FF--签约中
+	background-color:#00FFFF--未出售
+	background-color:#823813--在建工程抵押
+	*/
 }

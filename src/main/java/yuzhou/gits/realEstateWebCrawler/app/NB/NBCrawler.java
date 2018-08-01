@@ -23,7 +23,8 @@ public class NBCrawler extends DefaultRealEstateCrawlerStub {
 		PagingCallback projPaingCallback = new AbstractPagingCallback() {
 			@Override
 			protected WebCrawling createNextPageWebCrawling() {
-				String pageURL = baseCfg.basePageUrl+this.nextAvalPageNo;
+				String pageURL = baseCfg.basePageUrl.replace("[PAGENO]",
+						String.valueOf(this.nextAvalPageNo));
 				WebCrawling pageCrawling = new WebCrawling(HttpMethod.GET, null, 
 						pageURL, 100000, 100000, 100000);
 				return pageCrawling;
@@ -34,8 +35,8 @@ public class NBCrawler extends DefaultRealEstateCrawlerStub {
 				Document baseDoc = Jsoup.parse((String)args[0]);
 				/*return extractor.getTotalPageNums(baseDoc,NBConfig.pageInfoP, 
 						NBConfig.projPageInfoSelector);*/
-				return extractor.getTotalPageNums(NBConfig.pageInfoP,
-						baseDoc.selectFirst(NBConfig.projPageInfoSelector).toString());
+				String str = baseDoc.selectFirst(NBConfig.projPageInfoSelector).attr("href");
+				return extractor.getTotalPageNums(NBConfig.pageInfoP,str);
 			}
 		};
 

@@ -13,7 +13,6 @@ import yuzhou.gits.crawler.crawl.WebCrawling;
 import yuzhou.gits.crawler.crawl.WebCrawling.HttpMethod;
 import yuzhou.gits.crawler.crawl.WebCrawlingTask;
 import yuzhou.gits.crawler.dataExtractor.Constants;
-import yuzhou.gits.realEstateWebCrawler.app.TC.TCConfig;
 import yuzhou.gits.realEstateWebCrawler.realEstateCrawl.DefaultRealEstateCrawlingCallback;
 
 public class ProjectListExtractCallback extends DefaultRealEstateCrawlingCallback {
@@ -226,7 +225,7 @@ public class ProjectListExtractCallback extends DefaultRealEstateCrawlingCallbac
 
 	@Override
 	public void init(Object... args) throws Exception {
-		this.datasetSuffix = (String)args[0];
+		super.init(args);
 		projectCollectionName = this.projectCollectionName + this.datasetSuffix;
 		carryoutCollectionName = this.carryoutCollectionName + this.datasetSuffix;
 		planningCollectionName = this.planningCollectionName + this.datasetSuffix;

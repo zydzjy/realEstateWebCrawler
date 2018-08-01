@@ -8,13 +8,14 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 public class C3P0DataSource implements DataBaseSource {
 	
 	private ComboPooledDataSource comboPooledDataSource;
-	public void initMethod(){
+	public void initMethod(String driverClzName,String url,String user,String pwd){
 		try {
 			comboPooledDataSource = new ComboPooledDataSource();
-			comboPooledDataSource.setDriverClass("com.mysql.jdbc.Driver");
-			comboPooledDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/realeastatecrawler?useUnicode=true&characterEncoding=utf8");
-			comboPooledDataSource.setUser("root");
-			comboPooledDataSource.setPassword("12345678");
+			comboPooledDataSource.setDriverClass(driverClzName);
+			//"jdbc:mysql://localhost:3306/realeastatecrawler?useUnicode=true&characterEncoding=utf8
+			comboPooledDataSource.setJdbcUrl(url);
+			comboPooledDataSource.setUser(user);
+			comboPooledDataSource.setPassword(pwd);
 		} catch (Exception ex1) {
 			ex1.printStackTrace();
 		}
@@ -25,10 +26,6 @@ public class C3P0DataSource implements DataBaseSource {
 	}
 	
 	public static C3P0DataSource dataSourceInstance;
-	static {
-		dataSourceInstance = new C3P0DataSource();
-		dataSourceInstance.initMethod();
-	}
 	
 	public Connection getConnection() {
 		Connection con = null;

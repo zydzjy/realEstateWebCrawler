@@ -1,4 +1,4 @@
-package yuzhou.gits.realEstateWebCrawler.app;
+/*package yuzhou.gits.realEstateWebCrawler.app;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
@@ -107,8 +107,8 @@ public abstract class InToDBCallback implements BeanExtractedCallback {
 			String propertyVal = null;
 			String propertyName = fields[i].getName();
 			try {
-				/*if(propertyName.startsWith("_"))
-					continue;*/
+				if(propertyName.startsWith("_"))
+					continue;
 				propertyVal = (String) PropertyUtils.getSimpleProperty(bean, propertyName);
 				//System.out.println(propertyName+"="+propertyVal);
 				int idx = colNameToIdxMap.get(propertyName);
@@ -118,3 +118,4 @@ public abstract class InToDBCallback implements BeanExtractedCallback {
 		}
 	}
 }
+*/

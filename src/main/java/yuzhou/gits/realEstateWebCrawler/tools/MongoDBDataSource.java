@@ -3,9 +3,12 @@ package yuzhou.gits.realEstateWebCrawler.tools;
 import java.util.Arrays;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
+import com.mongodb.DBObject;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.ServerAddress;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -29,7 +32,13 @@ public class MongoDBDataSource implements DataSource {
 	public Object[] getObjVal(String...objNames) throws Exception {
 		String[] vals = new String[objNames.length];
 		for(int i=0;i<objNames.length;i++){
-			vals[i] = this.currDoc.get(objNames[i]).toString();
+			Object _val = this.currDoc.get(objNames[i]);
+			if(_val == null){
+				vals[i] = null;
+			}
+			else{
+				vals[i] = _val.toString();
+			}
 		}
 		return vals;
 	}
@@ -59,11 +68,21 @@ public class MongoDBDataSource implements DataSource {
 	public void findCollection(String dbName,String collectionName){
 		this.db = mongoClient.getDatabase(dbName);
 		this.collection = this.db.getCollection(collectionName);
-		this.cursor = collection.find().iterator();
+		FindIterable<Document> iterables = collection.find();
+		this.cursor = iterables.iterator();  
 	}
 	
 	@Override
 	public void destroy() throws Exception {
 		this.mongoClient.close();
+	}
+
+	public void findCollection(String dbName, String collectionName, String filterStr) {
+		this.db = mongoClient.getDatabase(dbName);
+		this.collection = this.db.getCollection(collectionName);
+		Document filter = Document.parse(filterStr);
+		FindIterable<Document> iterables = collection.find(filter);
+		this.cursor = iterables.iterator();  
+		
 	}
 }
