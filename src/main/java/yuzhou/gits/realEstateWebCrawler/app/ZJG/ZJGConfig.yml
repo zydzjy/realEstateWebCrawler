@@ -1,0 +1,7 @@
+baseUrl: http://218.4.91.246:81/EpointWebBuilder_zjgfcj/zjgFcjWebAction.action?cmd=getSpfList&pageIndex=1&pageSize=10&pname=/EpointWebBuilder_zjgfcj
+httpConnectTimeout: 100000
+httpReadTimeout:  100000
+httpWriteTimeout:  100000
+httpMethod:  GET
+accessInterval: 0
+

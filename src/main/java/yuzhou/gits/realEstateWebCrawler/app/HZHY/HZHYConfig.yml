@@ -1,0 +1,7 @@
+baseUrl: http://218.14.121.21:8080/ysw/outyssearch.aspx
+httpConnectTimeout: 100000
+httpReadTimeout:  100000
+httpWriteTimeout:  100000
+httpMethod:  GET
+accessInterval: 0
+

@@ -1,0 +1,7 @@
+baseUrl: http://www.anhouse.org/business/ysxkz
+httpConnectTimeout: 100000
+httpReadTimeout:  100000
+httpWriteTimeout:  100000
+httpMethod:  GET
+accessInterval: 0
+

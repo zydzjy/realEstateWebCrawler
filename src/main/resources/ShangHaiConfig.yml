@@ -1,0 +1,37 @@
+baseUrl: "http://202.109.79.219/service/freshHouse/getHosueList.action"
+httpConnectTimeout: 100000
+httpReadTimeout:  100000
+httpWriteTimeout:  100000
+httpMethod:  POST
+#httpHeader:
+postFormData: 
+  - "districtID"
+  - "5591ec7dfc0c3b7b"
+  - "dicRegionID"
+  - ""
+  - "stateID"
+  - ""
+  - "houseAreaID"
+  - "0"
+  - "dicAvgpriceID"
+  - "0"
+  - "dicPositionID"
+  - ""
+  - "houseTypeID"
+  - "0"
+  - "address"
+  - ""
+  - "openingID"
+  - ""
+  - "projectName"
+  - ""
+  - "currentPage"
+  - "1"
+#httpBody: "<PDoc Tag='GetYSPrjInfo' />"
+basePagingTaskNum: 1
+basePageStart: 1
+basePageEnd: -1 #less than 0 means end is tatal pages
+basePageUrl: "http://202.109.79.219/service/freshHouse/getHosueList.action"
+basePageInfoType: HTML_ELE_EXTRAT
+basePageInfoPatternStr: (\\d+)页
+basePageInfoSelector: "#AspNetPager1 > table > tbody > tr > td:nth-child(1)"

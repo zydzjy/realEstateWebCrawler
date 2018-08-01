@@ -1,0 +1,8 @@
+127.0.0.1,27027,test
+yuzhou.gits.realEstateWebCrawler.tools.DataItemMapper.WZMapper
+e:\\
+温州房号数据采集表
+房号
+wz_room20180716
+序号,预售证号,项目名称,项目地址,开盘日期,所在地区,开发单位,项目测算面积,售楼地点,售楼电话,幢号,楼层,户室号,房屋坐落,总建筑面积,套内面积,分摊面积,类别,设计用途,建筑结构,一房一价,所属项目,房屋状态
+preSaleLicenseNo,projName,projLocation,openDate,adminArea,developer,projArea,saleAddr,salePhone,bldName,floorNo,roomNo,roomLocation,totalArea,innerArea,shareArea,roomUsage,designUsage,structType,onePrice,roomProj,saleState

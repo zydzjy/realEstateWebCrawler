@@ -1,0 +1,8 @@
+127.0.0.1,27027,test
+NULL
+e:\\
+昆明呈贡采集表
+房号
+kmcg_room20180717
+序号,项目名称,幢号,单元号,房号,结构,用途,性质,建筑面积,套内面积,状态,抵押状态,公布单价,公布总价
+projName,buildingName,unitNo,roomNo,construction,roomUsage,roomType,constructionArea,innerArea,saleState,mortageState,openUnitPrice,openTotalPrice

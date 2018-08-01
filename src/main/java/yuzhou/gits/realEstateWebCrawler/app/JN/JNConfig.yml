@@ -1,0 +1,7 @@
+baseUrl: http://124.128.246.22:8090/onsaling/index.shtml
+httpConnectTimeout: 100000
+httpReadTimeout:  100000
+httpWriteTimeout:  100000
+httpMethod:  GET
+accessInterval: 0
+

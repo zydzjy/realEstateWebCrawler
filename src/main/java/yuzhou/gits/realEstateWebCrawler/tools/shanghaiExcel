@@ -1,0 +1,16 @@
+127.0.0.1,27027,test
+yuzhou.gits.realEstateWebCrawler.tools.DataItemMapper.ShangHaiMapper
+e:\\
+上海数据采集表
+表1-楼盘列表
+shanghai_project20180725
+序号,所在区域,状态,项目名称,项目地址,总套数,总面积
+adminArea,saleState,projName,projAddr,totalUnits,totalArea
+表2-预售证
+shanghai_presale20180725
+序号,所在区县,项目名称,企业名称,售楼地址,售楼电话,编号,预售证,开盘日期,总套数,住宅套数
+adminArea,projName,developer,saleAddr,salePhone,preSaleNo,preSaleLicense,openDate,totalUnits,totalHouseUnits
+表3-房号
+shanghai_room20180725
+序号,楼盘名称,预售许可证号,楼栋名称,最高/最低报价,房号,实际层,房号销售状态,预测面积,实测面积,房屋类型,房型,预测建筑面积,预测套内面积,预测分摊面积,实测建筑面积,实测套内面积,实测分摊面积
+projName,presaleNo,buildingName,highLowRefPrice,roomNo,floorNo,roomState,planArea,realArea,X,X,predictConstruct,predictInner,predictShare,realConstruct,realInner,realShare

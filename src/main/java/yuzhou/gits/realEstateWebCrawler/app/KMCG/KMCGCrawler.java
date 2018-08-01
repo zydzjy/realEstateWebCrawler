@@ -7,7 +7,6 @@ import yuzhou.gits.crawler.crawl.AbstractPagingCallback;
 import yuzhou.gits.crawler.crawl.PagingCallback;
 import yuzhou.gits.crawler.crawl.WebCrawling;
 import yuzhou.gits.crawler.crawl.WebCrawling.HttpMethod;
-import yuzhou.gits.realEstateWebCrawler.app.CS.CSConfig;
 import yuzhou.gits.realEstateWebCrawler.app.annotaion.CrawlerAnnotation;
 import yuzhou.gits.realEstateWebCrawler.realEstateCrawl.DefaultRealEstateCrawlerStub;
 
