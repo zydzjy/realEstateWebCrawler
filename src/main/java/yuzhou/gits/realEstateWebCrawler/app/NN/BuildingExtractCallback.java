@@ -50,12 +50,14 @@ public class BuildingExtractCallback extends DefaultRealEstateCrawlingCallback {
 							Iterator<Element> roomInfosEIt = roomInfosE.iterator();
 							while(roomInfosEIt.hasNext()){
 								Element roomInfoE = roomInfosEIt.next();
+								String roomNo2 = roomInfoE.ownText();
 								String roomInfoStr = roomInfoE.attr("title");
 								String bkColor = roomInfoE.attr("style");
 								Map<String,String> roomPropsMap = new HashMap<String,String>();
 								roomPropsMap.put("saleState",bkColor);
 								String floorNo = e.selectFirst("th").ownText();
 								roomPropsMap.put("floorNo",floorNo);
+								roomPropsMap.put("roomNo2",roomNo2);
 								this.extractor.extractDataByRegExps(NNConfig.roomDetailRegExprs, 
 										roomInfoStr, roomPropsMap);
 								//TODO: do callback

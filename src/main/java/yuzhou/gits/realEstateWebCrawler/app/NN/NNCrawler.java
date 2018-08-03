@@ -16,6 +16,7 @@ public class NNCrawler extends DefaultRealEstateCrawlerStub {
 	 
 	public NNCrawler(){
 		this.callbacksInPage = new ProjectListExtractCallback();
+		this.callbackInFirstPage = new ProjectListExtractCallback();
 	}
 
 	@Override
