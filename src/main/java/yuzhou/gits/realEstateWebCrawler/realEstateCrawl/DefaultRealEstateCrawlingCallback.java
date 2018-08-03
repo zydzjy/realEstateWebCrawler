@@ -1,11 +1,8 @@
 package yuzhou.gits.realEstateWebCrawler.realEstateCrawl;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import org.jsoup.Jsoup;
 
 import yuzhou.gits.crawler.crawl.DefaultCrawlingCallback;
 import yuzhou.gits.crawler.crawl.WebCrawlingTask;
@@ -13,6 +10,8 @@ import yuzhou.gits.crawler.dataExtractor.Constants;
 import yuzhou.gits.realEstateWebCrawler.SingletonMongoDBCallback;
 import yuzhou.gits.realEstateWebCrawler.app.Bootstrap;
 import yuzhou.gits.realEstateWebCrawler.app.IntoMongoDBCallback;
+
+
 
 public abstract class DefaultRealEstateCrawlingCallback 
 			extends DefaultCrawlingCallback {
@@ -24,17 +23,7 @@ public abstract class DefaultRealEstateCrawlingCallback
 	protected void _doCallback(WebCrawlingTask task) throws Exception {
 		this.currPageNo = (Integer)this.crawlTask.getPathContext()
 				.getAttr(Constants.PAGE_CURRENT_NO);
-		
-		/*InputStream input = (InputStream) task.getCrawling().getResponse();
-		StringBuffer respStrBuff = new StringBuffer("");
-		byte[] buff = new byte[1024];
-		int len = 0;
-		while((len = input.read(buff)) > 0){
-			respStrBuff.append(new String(buff,0,len));
-		}
-		this.extracting(respStrBuff.toString());*/
 		this.extracting((String) task.getCrawling().getResponse());
-		//this.extracting(new String(((String) task.getCrawling().getResponse()).getBytes("utf-8"),"gb2312"));
 	}
 	protected List<String> collectionNames=new ArrayList<String>();
 	protected DefaultRealEstateCrawlingCallback nextCallBack;
@@ -45,6 +34,7 @@ public abstract class DefaultRealEstateCrawlingCallback
 	public DefaultRealEstateCrawlingCallback(){
 		this.mongoDBCallback = SingletonMongoDBCallback.singleton;
 	}
+	
 	public DefaultRealEstateCrawlingCallback(String collectionName,DefaultRealEstateCrawlingCallback nextCallBack,Object... args){
 		this.collectionNames.add(collectionName);
 		this.nextCallBack=nextCallBack;
